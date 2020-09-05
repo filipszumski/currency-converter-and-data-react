@@ -7,8 +7,12 @@ const Form = () => {
   const [amount, setAmount] = useState("");
   const [wantedCurrency, setWantedCurrency] = useState(currencies[0].short);
 
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+  }
+
   return (
-    <form className="form" action="" method="GET">
+    <form className="form" action="" method="GET" onSubmit={onFormSubmit}>
       <p className="form__paragraph">
         <label className="form__label">
           <span className="form__labelText">Wymieniasz z (wybierz walutę):</span>
