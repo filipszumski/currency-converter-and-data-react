@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./style.css";
-import {currencies} from "../../currencies";
+import { currencies } from "../../currencies";
 
 const Form = () => {
   const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].short);
   const [amount, setAmount] = useState("");
   const [wantedCurrency, setWantedCurrency] = useState(currencies[0].short);
-
-  console.log(possessedCurrency);
 
   return (
     <form className="form" action="" method="GET">
@@ -19,11 +17,15 @@ const Form = () => {
             value={possessedCurrency}
             onChange={event => setPossessedCurrency(event.target.value)}
           >
-            <option name="currency" value="pln">PLN</option>
-            <option name="currency" value="eur">EUR</option>
-            <option name="currency" value="usd">USD</option>
-            <option name="currency" value="gbp">GBP</option>
-            <option name="currency" value="chf">CHF</option>
+            {currencies.map(currency => (
+              <option
+                name="currency"
+                value={currency.short}
+                key={currency.short}
+              >
+                {currency.name}
+              </option>
+            ))}
           </select>
         </label>
       </p>
@@ -46,16 +48,20 @@ const Form = () => {
       <p className="form__paragraph">
         <label className="form__label">
           <span className="form__labelText">Wymieniasz na (wybierz walutę):</span>
-          <select 
-          className="form__input"
-          value={wantedCurrency}
-          onChange={event => setWantedCurrency(event.target.value)}
+          <select
+            className="form__input"
+            value={wantedCurrency}
+            onChange={event => setWantedCurrency(event.target.value)}
           >
-            <option name="currency" value="pln">PLN</option>
-            <option name="currency" value="eur">EUR</option>
-            <option name="currency" value="usd">USD</option>
-            <option name="currency" value="gbp">GBP</option>
-            <option name="currency" value="chf">CHF</option>
+            {currencies.map(currency => (
+              <option
+                name="currency"
+                value={currency.short}
+                key={currency.short}
+              >
+                {currency.name}
+              </option>
+            ))}
           </select>
         </label>
       </p>
