@@ -6,10 +6,18 @@ const Form = () => {
   const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].short);
   const [amount, setAmount] = useState("");
   const [wantedCurrency, setWantedCurrency] = useState(currencies[0].short);
+  const [result, setResult] = useState(undefined);
+
+  const calculateResult = () => {
+    const possessedCurrencyRate = currencies.find(currency => currency.short === possessedCurrency).rate;
+    const wantedCurrencyRate = currencies.find(currency => currency.short === wantedCurrency).rate;
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-  }
+
+    calculateResult();
+  };
 
   return (
     <form className="form" action="" method="GET" onSubmit={onFormSubmit}>
@@ -78,6 +86,7 @@ const Form = () => {
         pochodzących ze strony Narodowego Banku Polskiego
             </p>
       <p className="form__paragraph form__paragraph--result">
+
       </p>
     </form>
   );
