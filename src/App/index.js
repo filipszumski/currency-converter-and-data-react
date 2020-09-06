@@ -1,14 +1,32 @@
-import React from 'react';
-import { Container } from "./Container";
-import { Header } from "./Container/Header";
-import { Form } from "./Container/Form";
+import React, { useState } from 'react';
+import { Header } from "./Header";
+import { Form } from "./Form";
+import { currencies } from "./currencies";
+import "./style.css"
 
 function App() {
+  const [result, setResult] = useState();
+
+  const calculateResult = (amount, possessedCurrency, wantedCurrency) => {
+    const possessedCurrencyRate = currencies.find(currency => currency.name === possessedCurrency).rate;
+    const wantedCurrencyRate = currencies.find(currency => currency.name === wantedCurrency).rate;
+
+    setResult({
+      amountPossessed: +amount,
+      amountRecived: (+amount * possessedCurrencyRate / wantedCurrencyRate),
+      possessedCurrency,
+      wantedCurrency,
+    });
+  };
+
   return (
-    <Container>
+    <div className="app">
       <Header />
-      <Form />
-    </Container>
+      <Form
+        result={result}
+        calculateResule={calculateResult}
+      />
+    </div>
   );
 }
 

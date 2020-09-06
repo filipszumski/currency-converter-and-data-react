@@ -9,6 +9,6 @@ const Result = ({ result }) => (
             </>
         )}
     </p>
-)
+);
 
-export { Result }
+export { Result };
