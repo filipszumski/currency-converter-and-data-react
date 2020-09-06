@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import "./style.css";
 import { currencies } from "../../currencies";
+import { Result } from "./Result";
 
 const Form = () => {
   const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].short);
   const [amount, setAmount] = useState("");
   const [wantedCurrency, setWantedCurrency] = useState(currencies[0].short);
-  const [result, setResult] = useState(undefined);
+  const [result, setResult] = useState();
 
   const calculateResult = () => {
     const possessedCurrencyRate = currencies.find(currency => currency.short === possessedCurrency).rate;
     const wantedCurrencyRate = currencies.find(currency => currency.short === wantedCurrency).rate;
+
+    setResult({
+      amountPossessed: +amount,
+      amountRecived: (+amount * possessedCurrencyRate / wantedCurrencyRate),
+      possessedCurrency,
+      wantedCurrency,
+    });
   };
 
   const onFormSubmit = (event) => {
@@ -84,10 +92,8 @@ const Form = () => {
       <p className="form__paragraph form__paragraph--info">
         *Wartości kursów walut aktualne na dzień 01.07.2020 r. według danych
         pochodzących ze strony Narodowego Banku Polskiego
-            </p>
-      <p className="form__paragraph form__paragraph--result">
-
       </p>
+      <Result result={result} />
     </form>
   );
 };
