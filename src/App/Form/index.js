@@ -3,15 +3,28 @@ import "./style.css";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 
-const Form = ({ result, calculateResult }) => {
+const Form = () => {
   const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].name);
   const [amount, setAmount] = useState("");
   const [wantedCurrency, setWantedCurrency] = useState(currencies[0].name);
+  const [result, setResult] = useState();
+
+  const calculateResult = () => {
+    const possessedCurrencyRate = currencies.find(currency => currency.name === possessedCurrency).rate;
+    const wantedCurrencyRate = currencies.find(currency => currency.name === wantedCurrency).rate;
+
+    setResult({
+      amountPossessed: +amount,
+      amountRecived: amount * possessedCurrencyRate / wantedCurrencyRate,
+      possessedCurrency,
+      wantedCurrency,
+    });
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    calculateResult(amount, possessedCurrency, wantedCurrency);
+    calculateResult();
   };
 
   return (
