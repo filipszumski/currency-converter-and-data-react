@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/currency-coverter-react/static/css/main.59d6a11b.chunk.css",
+    "main.js": "/currency-coverter-react/static/js/main.c6f0e28b.chunk.js",
+    "main.js.map": "/currency-coverter-react/static/js/main.c6f0e28b.chunk.js.map",
+    "runtime-main.js": "/currency-coverter-react/static/js/runtime-main.1142b4e4.js",
+    "runtime-main.js.map": "/currency-coverter-react/static/js/runtime-main.1142b4e4.js.map",
+    "static/js/2.59662f4b.chunk.js": "/currency-coverter-react/static/js/2.59662f4b.chunk.js",
+    "static/js/2.59662f4b.chunk.js.map": "/currency-coverter-react/static/js/2.59662f4b.chunk.js.map",
+    "index.html": "/currency-coverter-react/index.html",
+    "precache-manifest.b33d64fc8d76a77bddcaf03415fcdc72.js": "/currency-coverter-react/precache-manifest.b33d64fc8d76a77bddcaf03415fcdc72.js",
+    "service-worker.js": "/currency-coverter-react/service-worker.js",
+    "static/css/main.59d6a11b.chunk.css.map": "/currency-coverter-react/static/css/main.59d6a11b.chunk.css.map",
+    "static/js/2.59662f4b.chunk.js.LICENSE.txt": "/currency-coverter-react/static/js/2.59662f4b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/currency-coverter-react/static/media/dollar-5360047_1920.60d3c8b2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1142b4e4.js",
+    "static/js/2.59662f4b.chunk.js",
+    "static/css/main.59d6a11b.chunk.css",
+    "static/js/main.c6f0e28b.chunk.js"
+  ]
+}
