@@ -4,14 +4,14 @@ import { currencies } from "../../currencies";
 import { Result } from "./Result";
 
 const Form = () => {
-  const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].short);
+  const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].name);
   const [amount, setAmount] = useState("");
-  const [wantedCurrency, setWantedCurrency] = useState(currencies[0].short);
+  const [wantedCurrency, setWantedCurrency] = useState(currencies[0].name);
   const [result, setResult] = useState();
 
   const calculateResult = () => {
-    const possessedCurrencyRate = currencies.find(currency => currency.short === possessedCurrency).rate;
-    const wantedCurrencyRate = currencies.find(currency => currency.short === wantedCurrency).rate;
+    const possessedCurrencyRate = currencies.find(currency => currency.name === possessedCurrency).rate;
+    const wantedCurrencyRate = currencies.find(currency => currency.name === wantedCurrency).rate;
 
     setResult({
       amountPossessed: +amount,
@@ -40,7 +40,7 @@ const Form = () => {
             {currencies.map(currency => (
               <option
                 name="currency"
-                value={currency.short}
+                value={currency.name}
                 key={currency.short}
               >
                 {currency.name}
@@ -59,6 +59,7 @@ const Form = () => {
             step="0.01"
             placeholder="Wpisz kwotę"
             className="form__input" min="0"
+            required
             value={amount}
             onChange={event => setAmount(event.target.value)}
           />
@@ -76,7 +77,7 @@ const Form = () => {
             {currencies.map(currency => (
               <option
                 name="currency"
-                value={currency.short}
+                value={currency.name}
                 key={currency.short}
               >
                 {currency.name}
