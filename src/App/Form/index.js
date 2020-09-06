@@ -25,6 +25,7 @@ const Form = () => {
     event.preventDefault();
 
     calculateResult();
+    setAmount("");
   };
 
   return (
