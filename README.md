@@ -1,6 +1,38 @@
 # Currency converter
 
+Link: [https://filipszumski.github.io/currency-converter/](https://filipszumski.github.io/currency-converter/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
+Simple currency converter. It allows you to make caluculations between few currencies. Exchange rate are currently static, based on rates of the day from Polish National Bank website. Supported currencies:
+
+- PLN - Polish Zloty
+- EUR - Euro
+- USD - US Dollar
+- GBP - British Pound
+- CHF - Swiss Franc
+
+### Technologies used
+
+- HTML
+- CSS 
+- JavaScript
+- BEM
+- React
+- create-react-app
+- Webpack
+- Babel
+
+### How to use
+
+![instruction GIF](https://github.com/filipszumski/currency-converter/blob/master/images/instruction.gif?raw=true)
+
+1. Choose a currency you wish to convert from.
+2. Write an amount that you want to convert.
+3. Choose a currency you wish to convert to.
+4. Click on the calcute button to display result and rate.
 
 ## Available Scripts
 
