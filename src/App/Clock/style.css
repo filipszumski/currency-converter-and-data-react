@@ -1,6 +1,6 @@
 .clock {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
+    font-family: monospace;
+    font-size: 14px;
     margin: 0;
     text-align: end;
 }
