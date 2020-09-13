@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 
+const formatDate = (date) => 
+    date.toLocaleString(undefined, {
+        year: "numeric",
+        month: "long",
+        weekday: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+    });
+
 const Clock = () => {
     const [date, setDate] = useState(new Date());
 
@@ -12,13 +23,13 @@ const Clock = () => {
         return () => {
             clearInterval(intervalId);
         };
-    }, [date])
+    }, [])
 
     return (
         <p className="clock">
-            {date.toLocaleDateString(undefined, { year: "numeric", month: "long", weekday: "long", day: "numeric" })}
+            Dziś jest
             {" "}
-            {date.toLocaleTimeString()}
+            {formatDate(date)}
         </p>
     );
 };
