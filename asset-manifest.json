@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/currency-converter-react/static/css/main.9b7e39c4.chunk.css",
-    "main.js": "/currency-converter-react/static/js/main.c91511dd.chunk.js",
-    "main.js.map": "/currency-converter-react/static/js/main.c91511dd.chunk.js.map",
+    "main.js": "/currency-converter-react/static/js/main.49cba747.chunk.js",
+    "main.js.map": "/currency-converter-react/static/js/main.49cba747.chunk.js.map",
     "runtime-main.js": "/currency-converter-react/static/js/runtime-main.2415008a.js",
     "runtime-main.js.map": "/currency-converter-react/static/js/runtime-main.2415008a.js.map",
-    "static/js/2.59662f4b.chunk.js": "/currency-converter-react/static/js/2.59662f4b.chunk.js",
-    "static/js/2.59662f4b.chunk.js.map": "/currency-converter-react/static/js/2.59662f4b.chunk.js.map",
+    "static/js/2.9a20f34c.chunk.js": "/currency-converter-react/static/js/2.9a20f34c.chunk.js",
+    "static/js/2.9a20f34c.chunk.js.map": "/currency-converter-react/static/js/2.9a20f34c.chunk.js.map",
     "index.html": "/currency-converter-react/index.html",
-    "precache-manifest.b990c73524d01f255c08b8ab00372270.js": "/currency-converter-react/precache-manifest.b990c73524d01f255c08b8ab00372270.js",
+    "precache-manifest.02b42792937c1f74c9fffed69cc7a65b.js": "/currency-converter-react/precache-manifest.02b42792937c1f74c9fffed69cc7a65b.js",
     "service-worker.js": "/currency-converter-react/service-worker.js",
-    "static/css/main.9b7e39c4.chunk.css.map": "/currency-converter-react/static/css/main.9b7e39c4.chunk.css.map",
-    "static/js/2.59662f4b.chunk.js.LICENSE.txt": "/currency-converter-react/static/js/2.59662f4b.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/currency-converter-react/static/media/dollar-5360047_1920.60d3c8b2.jpg"
+    "static/js/2.9a20f34c.chunk.js.LICENSE.txt": "/currency-converter-react/static/js/2.9a20f34c.chunk.js.LICENSE.txt",
+    "static/media/dollar-5360047_1920.jpg": "/currency-converter-react/static/media/dollar-5360047_1920.60d3c8b2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2415008a.js",
-    "static/js/2.59662f4b.chunk.js",
-    "static/css/main.9b7e39c4.chunk.css",
-    "static/js/main.c91511dd.chunk.js"
+    "static/js/2.9a20f34c.chunk.js",
+    "static/js/main.49cba747.chunk.js"
   ]
 }
