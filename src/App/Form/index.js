@@ -32,7 +32,7 @@ const Form = () => {
     <StyledForm action="" method="GET" onSubmit={onFormSubmit}>
       <Paragraph>
         <Label>
-          <span className="form__labelText">Wymieniasz z (wybierz walutę):</span>
+          <Span className="form__labelText">Wymieniasz z (wybierz walutę):</Span>
           <Select
             className="form__input"
             value={possessedCurrency}
