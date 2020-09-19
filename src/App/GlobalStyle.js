@@ -18,6 +18,6 @@ export const GlobalStyle = createGlobalStyle`
     background-image: url("${background}");
     background-size: cover;
     background-position: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${({theme}) => theme.fonts.primaryFont}
     }
 `;

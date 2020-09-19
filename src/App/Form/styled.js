@@ -11,7 +11,7 @@ export const Paragraph = styled.p`
     margin: 0px;
 
     ${({ info }) => info && css`
-        color: rgb(107, 107, 107);
+        color: ${({ theme }) => theme.colors.info};
         font-size: 14px;
     `}
     
@@ -20,7 +20,7 @@ export const Paragraph = styled.p`
         justify-content: center;
         flex-wrap: wrap;
         font-size: 28px;
-        color: teal;
+        color: ${({ theme }) => theme.colors.result};
     `}
 `;
 
@@ -29,10 +29,10 @@ export const Label = styled.label`
     display: flex;
     align-items: center;
 
-    @media (max-width: 767px) {
-        flex-wrap: wrap;
-    }
-`;
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            flex-wrap: wrap;
+        }
+    `;
 
 export const Select = styled.select`
     flex: 0 1 100%;
@@ -50,9 +50,9 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     flex: 1;
-    background-color: teal;
+    background-color: ${({theme}) => theme.colors.buttonBackground};
     border-radius: 5px;
-    color: white;
+    color: ${({theme}) => theme.colors.buttonText};
     padding: 8px;
     border: none;
 
@@ -67,7 +67,7 @@ export const Button = styled.button`
 export const Span = styled.span`
     flex: 0 0 300px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         flex: 0 1 auto;
     }
 `;

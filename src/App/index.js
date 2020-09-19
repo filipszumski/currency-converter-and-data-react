@@ -4,15 +4,19 @@ import { Form } from "./Form";
 import { Clock } from "./Clock";
 import { GlobalStyle } from "./GlobalStyle";
 import { Wrapper } from "./styled";
+import { ThemeProvider } from "styled-components";
+import {theme} from "./theme";
 
 function App() {
   return (
-    <Wrapper>
-      <GlobalStyle />
-      <Clock />
-      <Header />
-      <Form />
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <GlobalStyle />
+        <Clock />
+        <Header />
+        <Form />
+      </Wrapper>
+    </ThemeProvider>
   );
 }
 
