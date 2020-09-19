@@ -1,8 +1,8 @@
 import React from "react";
-import "./style.css"
+import { StyledHeader } from "./styled";
 
 const Header = () => (
-    <h1 className="header">Kantor Online</h1>
+    <StyledHeader>Kantor Online</StyledHeader>
 );
 
 export { Header };

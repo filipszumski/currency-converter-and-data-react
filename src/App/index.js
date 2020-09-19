@@ -2,17 +2,17 @@ import React from 'react';
 import { Header } from "./Header";
 import { Form } from "./Form";
 import { Clock } from "./Clock";
-import "./style.css";
-import {GlobalStyle} from "./GlobalStyle";
+import { GlobalStyle } from "./GlobalStyle";
+import { Wrapper } from "./styled";
 
 function App() {
   return (
-    <div className="app">
+    <Wrapper>
       <GlobalStyle />
       <Clock />
       <Header />
       <Form />
-    </div>
+    </Wrapper>
   );
 }
 

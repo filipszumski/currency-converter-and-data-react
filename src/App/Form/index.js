@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./style.css";
 import { currencies } from "./currencies";
 import { Result } from "./Result";
+import { StyledForm, Paragraph, Label, Select, Input, Button, Span } from "./styled";
 
 const Form = () => {
   const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].name);
@@ -29,11 +29,11 @@ const Form = () => {
   };
 
   return (
-    <form className="form" action="" method="GET" onSubmit={onFormSubmit}>
-      <p className="form__paragraph">
-        <label className="form__label">
+    <StyledForm action="" method="GET" onSubmit={onFormSubmit}>
+      <Paragraph>
+        <Label>
           <span className="form__labelText">Wymieniasz z (wybierz walutę):</span>
-          <select
+          <Select
             className="form__input"
             value={possessedCurrency}
             onChange={event => setPossessedCurrency(event.target.value)}
@@ -47,14 +47,14 @@ const Form = () => {
                 {currency.name}
               </option>
             ))}
-          </select>
-        </label>
-      </p>
+          </Select>
+        </Label>
+      </Paragraph>
 
-      <p className="form__paragraph">
-        <label className="form__label">
-          <span className="form__labelText">Kwota:</span>
-          <input
+      <Paragraph>
+        <Label>
+          <Span>Kwota:</Span>
+          <Input
             type="number"
             name="amount"
             step="0.01"
@@ -64,13 +64,13 @@ const Form = () => {
             value={amount}
             onChange={event => setAmount(event.target.value)}
           />
-        </label>
-      </p>
+        </Label>
+      </Paragraph>
 
-      <p className="form__paragraph">
-        <label className="form__label">
-          <span className="form__labelText">Wymieniasz na (wybierz walutę):</span>
-          <select
+      <Paragraph>
+        <Label>
+          <Span>Wymieniasz na (wybierz walutę):</Span>
+          <Select
             className="form__input"
             value={wantedCurrency}
             onChange={event => setWantedCurrency(event.target.value)}
@@ -84,19 +84,19 @@ const Form = () => {
                 {currency.name}
               </option>
             ))}
-          </select>
-        </label>
-      </p>
+          </Select>
+        </Label>
+      </Paragraph>
 
-      <p className="form__paragraph">
-        <button className="form__button">Przelicz</button>
-      </p>
-      <p className="form__paragraph form__paragraph--info">
+      <Paragraph>
+        <Button>Przelicz</Button>
+      </Paragraph>
+      <Paragraph info>
         *Wartości kursów walut aktualne na dzień 01.07.2020 r. według danych
         pochodzących ze strony Narodowego Banku Polskiego
-      </p>
+      </Paragraph>
       <Result result={result} />
-    </form>
+    </StyledForm>
   );
 };
 
