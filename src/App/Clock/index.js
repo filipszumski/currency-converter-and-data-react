@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledClock } from "./styled";
+import { Wrapper } from "./styled";
 import { useCurrentDate } from "./useCurrentDate";
 
 const formatDate = (date) =>
@@ -17,10 +17,10 @@ export const Clock = () => {
     const date = useCurrentDate();
 
     return (
-        <StyledClock>
+        <Wrapper>
             Dziś jest
             {" "}
             {formatDate(date)}
-        </StyledClock>
+        </Wrapper>
     );
 };
