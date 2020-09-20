@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { currencies } from "./currencies";
 import { Result } from "./Result";
-import { StyledForm, Paragraph, Label, Select, Input, Button, Span } from "./styled";
+import { StyledForm, Paragraph, Label, Input, Button, Span } from "./styled";
 
 const Form = () => {
   const [possessedCurrency, setPossessedCurrency] = useState(currencies[0].name);
@@ -33,7 +33,8 @@ const Form = () => {
       <Paragraph>
         <Label>
           <Span className="form__labelText">Wymieniasz z (wybierz walutę):</Span>
-          <Select
+          <Input
+            as="select"
             className="form__input"
             value={possessedCurrency}
             onChange={event => setPossessedCurrency(event.target.value)}
@@ -47,7 +48,7 @@ const Form = () => {
                 {currency.name}
               </option>
             ))}
-          </Select>
+          </Input>
         </Label>
       </Paragraph>
 
@@ -70,7 +71,8 @@ const Form = () => {
       <Paragraph>
         <Label>
           <Span>Wymieniasz na (wybierz walutę):</Span>
-          <Select
+          <Input
+            as="select"
             className="form__input"
             value={wantedCurrency}
             onChange={event => setWantedCurrency(event.target.value)}
@@ -84,7 +86,7 @@ const Form = () => {
                 {currency.name}
               </option>
             ))}
-          </Select>
+          </Input>
         </Label>
       </Paragraph>
 

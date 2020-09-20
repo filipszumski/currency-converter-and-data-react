@@ -34,13 +34,6 @@ export const Label = styled.label`
         }
     `;
 
-export const Select = styled.select`
-    flex: 0 1 100%;
-    border-radius: 10px;
-    border: 1px solid teal;
-    padding: 8px;
-`;
-
 export const Input = styled.input`
     flex: 0 1 100%;
     border-radius: 10px;
