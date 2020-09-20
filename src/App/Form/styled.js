@@ -55,6 +55,7 @@ export const Button = styled.button`
     color: ${({theme}) => theme.colors.buttonText};
     padding: 8px;
     border: none;
+    transition: filter 0.5s;
 
     &:hover {
         filter: brightness(110%);
