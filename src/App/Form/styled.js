@@ -15,7 +15,7 @@ export const Paragraph = styled.p`
         font-size: 14px;
     `}
     
-    ${({ result }) => result && css`
+    ${({ styledResult }) => styledResult && css`
         display: flex;
         justify-content: center;
         flex-wrap: wrap;

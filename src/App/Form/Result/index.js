@@ -2,7 +2,7 @@ import React from "react";
 import { Paragraph } from "../styled";
 
 const Result = ({ result }) => (
-    <Paragraph result>
+    <Paragraph styledResult>
         {!!result && (
             <>
                 {result.amountPossessed.toFixed(2)}&nbsp;{result.possessedCurrency}&nbsp;=&nbsp;
