@@ -13,6 +13,22 @@ export const Paragraph = styled.p`
     ${({ info }) => info && css`
         color: ${({ theme }) => theme.colors.info};
         font-size: 14px;
+        text-align: center;
+        justify-content: center;
+    `}
+
+    ${({ loadingState }) => loadingState && css`
+        text-align: center;
+        display: inline;
+        color: ${({ theme }) => theme.colors.info};
+        font-size: 18px;
+    `}
+
+    ${({ errorState }) => errorState && css`
+        text-align: center;
+        display: inline;
+        color: ${({ theme }) => theme.colors.error};
+        font-size: 18px;
     `}
     
     ${({ styledResult }) => styledResult && css`
@@ -43,9 +59,9 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     flex: 1;
-    background-color: ${({theme}) => theme.colors.buttonBackground};
+    background-color: ${({ theme }) => theme.colors.buttonBackground};
     border-radius: 5px;
-    color: ${({theme}) => theme.colors.buttonText};
+    color: ${({ theme }) => theme.colors.buttonText};
     padding: 8px;
     border: none;
     transition: filter 0.5s;
