@@ -6,6 +6,7 @@ export const theme = {
         title: "teal",
         info: "rgb(107, 107, 107)",
         result: "teal",
+        error: "crimson",
     },
     breakpoints: {
         mobile: 767,
