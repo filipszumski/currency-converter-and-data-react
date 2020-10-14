@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 export const useRatesData = () => {
@@ -6,33 +7,25 @@ export const useRatesData = () => {
   });
 
   useEffect(() => {
-    const fetchRates = () => {
-      const promise = fetch("https://api.exchangeratesapi.io/latest?base=PLN");
+    const fetchRates = async () => {
+      try {
+        const response = await axios.get("https://api.exchangeratesapi.io/latest?base=PLN");
 
-      promise
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(response.statusText);
-          }
+        const {rates, date} = await response.data;
 
-          return response;
+        setRatesData({
+          rates,
+          date,
+          state: "success",
+        });
+        
+      } catch(error){
+        console.error(error);
+        setRatesData({
+          state: "failure",
         })
-        .then(response => response.json())
-        .then(response => {
-          const {rates, date} = response;
+      };
 
-          setRatesData({
-            rates,
-            date,
-            state: "success",
-          })
-        })
-        .catch(error => {
-          console.error(error)
-          setRatesData({
-            state: "failure"
-          })
-        })
     }
 
     setTimeout(fetchRates, 1 * 1000)
