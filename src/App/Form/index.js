@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Result } from "./Result";
 import { StyledForm, Paragraph, Label, Input, Button, Span } from "./styled";
 import { useRatesData } from "./useRatesData";
@@ -9,6 +9,7 @@ const Form = () => {
   const [wantedCurrency, setWantedCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
+  const inputRef = useRef(null);
 
   const calculateResult = () => {
     const possessedCurrencyRate = rates[possessedCurrency];
@@ -27,6 +28,7 @@ const Form = () => {
 
     calculateResult();
     setAmount("");
+    inputRef.current.focus();
   };
 
   return (
@@ -75,6 +77,7 @@ const Form = () => {
                 <Label>
                   <Span>Kwota:</Span>
                   <Input
+                    ref={inputRef}
                     type="number"
                     name="amount"
                     step="0.01"
@@ -111,9 +114,9 @@ const Form = () => {
                 <Button>Przelicz</Button>
               </Paragraph>
               <Paragraph info>
-              Kursy walut pobierane są z Europejskiego Banku Centralnego.<br/>
+                Kursy walut pobierane są z Europejskiego Banku Centralnego.<br />
               Aktualne na dzień: {date}
-          </Paragraph>
+              </Paragraph>
               <Result result={result} />
             </>
           )}
