@@ -1,16 +1,16 @@
 import React from "react";
 
-import { Nav, List, Item, StyledLink } from "./styled";
-import { toConverter } from "../../routes";
+import { Nav, List, Item, StyledNavLink } from "./styled";
+import { toConverter, toLatestRates } from "../../routes";
 
 export const Navigation = () => (
     <Nav>
         <List>
             <Item>
-                <StyledLink to={toConverter()}>Kalkulator Walut</StyledLink>
+                <StyledNavLink to={toConverter()}>Kalkulator walut</StyledNavLink>
             </Item>
             <Item>
-                <StyledLink to={toConverter()}>Kalkulator Walut</StyledLink>
+                <StyledNavLink to={toLatestRates()}>Ostatnie stawki</StyledNavLink>
             </Item>
         </List>
     </Nav>

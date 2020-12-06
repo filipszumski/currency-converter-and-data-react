@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Nav = styled.nav`
 flex: 1 0 100%;
@@ -18,7 +18,7 @@ export const Item = styled.li`
 margin: 20px 10px 20px 10px;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledNavLink = styled(NavLink)`
 color: ${({ theme }) => theme.colors.background};
 text-decoration: none;
 `;
