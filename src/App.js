@@ -1,21 +1,21 @@
 import React from 'react';
-import { Header } from "./Header";
-import { Form } from "./Form";
-import { Clock } from "./Clock";
+import { Header } from "./common/Header";
+import { Converter } from "./features/rates/Converter";
+import { Clock } from "./common/Clock";
 import { GlobalStyle } from "./GlobalStyle";
-import { Wrapper } from "./styled";
+import { Container } from "./common/Container";
 import { ThemeProvider } from "styled-components";
-import {theme} from "./theme";
+import { theme } from "./theme";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <Container>
         <GlobalStyle />
         <Clock />
         <Header />
-        <Form />
-      </Wrapper>
+        <Converter />
+      </Container>
     </ThemeProvider>
   );
 }

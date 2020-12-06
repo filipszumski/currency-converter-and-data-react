@@ -3,7 +3,7 @@ import { Result } from "./Result";
 import { StyledForm, Paragraph, Label, Input, Button, Span } from "./styled";
 import { useRatesData } from "./useRatesData";
 
-const Form = () => {
+const Converter = () => {
   const [rates, date, state] = useRatesData();
   const [possessedCurrency, setPossessedCurrency] = useState("PLN");
   const [wantedCurrency, setWantedCurrency] = useState("EUR");
@@ -124,4 +124,4 @@ const Form = () => {
   );
 };
 
-export { Form };
+export { Converter };
