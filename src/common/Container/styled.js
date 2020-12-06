@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    flex: 0 1 750px;
+    flex: 0 1 800px;
     font-size: 18px;
     background-color: ${({ theme }) => theme.colors.background};
     padding: 40px;
