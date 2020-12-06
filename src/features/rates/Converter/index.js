@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Result } from "./Result";
 import { Container } from "../../../common/Container";
+import { Header } from "../../../common/Header";
 import { StyledForm, Paragraph, Label, Input, Button, Span } from "./styled";
 import { useRatesData } from "./useRatesData";
 
@@ -34,6 +35,7 @@ const Converter = () => {
 
   return (
     <Container>
+      <Header title="Kalkulator walut" />
       <StyledForm action="" method="GET" onSubmit={onFormSubmit}>
         {state === "loading" ?
           (

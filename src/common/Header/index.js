@@ -1,8 +1,8 @@
 import React from "react";
 import { StyledHeader } from "./styled";
 
-const Header = () => (
-    <StyledHeader>Kantor Online</StyledHeader>
+const Header = ({ title }) => (
+    <StyledHeader>{title}</StyledHeader>
 );
 
 export { Header };
