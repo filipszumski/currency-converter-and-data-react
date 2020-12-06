@@ -12,12 +12,13 @@ export const GlobalStyle = createGlobalStyle`
 
     #root {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
     background-image: url("${background}");
     background-size: cover;
     background-position: center;
-    font-family: ${({theme}) => theme.fonts.primaryFont}
+    font-family: ${({ theme }) => theme.fonts.primaryFont}
     }
 `;
