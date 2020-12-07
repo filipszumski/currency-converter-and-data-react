@@ -1,21 +1,31 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Navigation } from "./common/Navigation";
 import { Converter } from "./features/rates/Converter";
 import { LatestRates } from "./features/rates/LatestRates";
-import { toConverter, toLatestRates } from "./routes";
+import { TopRates } from "./features/rates/TopRates";
+import { Chart } from "./features/rates/Chart";
+import { toConverter, toLatestRates, toChart, toTopRates } from "./routes";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="currency-converter-react">
       <Navigation />
-
       <Switch>
         <Route path={toConverter()}>
           <Converter />
         </Route>
         <Route path={toLatestRates()}>
           <LatestRates />
+        </Route>
+        <Route path={toChart()}>
+          <Chart />
+        </Route>
+        <Route path={toTopRates()}>
+          <TopRates />
+        </Route>
+        <Route>
+          <Redirect to={toConverter()} />
         </Route>
       </Switch>
     </BrowserRouter>
