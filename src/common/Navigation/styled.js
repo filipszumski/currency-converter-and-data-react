@@ -18,7 +18,12 @@ export const Item = styled.li`
 margin: 20px 10px 20px 10px;
 `;
 
-export const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink).attrs(() => ({
+    activeClassName: "active",
+}))`
+&.active {
+    font-weight: bold;
+}
 color: ${({ theme }) => theme.colors.background};
 text-decoration: none;
 `;
