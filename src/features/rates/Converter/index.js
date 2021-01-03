@@ -1,17 +1,29 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Result } from "./Result";
 import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
 import { StyledForm, Paragraph, Label, Input, Button, Span } from "./styled";
-import { useRatesData } from "./useRatesData";
+import { getRates, selectState, selectDate, selectLatestDayRates, selectBase } from "../ratesSlice";
 
 const Converter = () => {
-  const [rates, date, state] = useRatesData();
-  const [possessedCurrency, setPossessedCurrency] = useState("PLN");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRates());
+  }, [dispatch]);
+
+  const rates = useSelector(selectLatestDayRates);
+  const state = useSelector(selectState);
+  const date = useSelector(selectDate);
+  const base = useSelector(selectBase);
+
+  const inputRef = useRef(null);
+
+  const [possessedCurrency, setPossessedCurrency] = useState(base);
   const [wantedCurrency, setWantedCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
-  const inputRef = useRef(null);
 
   const calculateResult = () => {
     const possessedCurrencyRate = rates[possessedCurrency];
@@ -36,7 +48,7 @@ const Converter = () => {
   return (
     <Container>
       <Header title="Kalkulator walut" />
-      <StyledForm action="" method="GET" onSubmit={onFormSubmit}>
+      <StyledForm onSubmit={onFormSubmit}>
         {state === "loading" ?
           (
             <>
@@ -45,7 +57,7 @@ const Converter = () => {
               </Paragraph>
             </>
           )
-          : state === "failure" ?
+          : state === "error" ?
             (
               <>
                 <Paragraph errorState>
@@ -58,14 +70,13 @@ const Converter = () => {
               <>
                 <Paragraph>
                   <Label>
-                    <Span className="form__labelText">Wymieniasz z (wybierz walutę):</Span>
+                    <Span>Wymieniasz z (wybierz walutę):</Span>
                     <Input
                       as="select"
-                      placeholder="Wybierz walutę..."
                       value={possessedCurrency}
                       onChange={event => setPossessedCurrency(event.target.value)}
                     >
-                      {Object.keys(rates).map(currency => (
+                      {Object.keys(rates).sort((a, b) => a.localeCompare(b)).map(currency => (
                         <option
                           key={currency}
                           value={currency}
@@ -83,9 +94,8 @@ const Converter = () => {
                     <Input
                       ref={inputRef}
                       type="number"
-                      name="amount"
                       step="0.01"
-                      placeholder="Wpisz kwotę"
+                      placeholder="Wpisz kwotę..."
                       min="0"
                       required
                       value={amount}
@@ -102,7 +112,7 @@ const Converter = () => {
                       value={wantedCurrency}
                       onChange={event => setWantedCurrency(event.target.value)}
                     >
-                      {Object.keys(rates).map(currency => (
+                      {Object.keys(rates).sort((a, b) => a.localeCompare(b)).map(currency => (
                         <option
                           key={currency}
                           value={currency}
