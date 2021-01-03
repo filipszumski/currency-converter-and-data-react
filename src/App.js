@@ -9,7 +9,7 @@ import { toConverter, toLatestRates, toChart, toTopRates } from "./routes";
 
 function App() {
   return (
-    <BrowserRouter basename="currency-converter-react">
+    <BrowserRouter basename="/currency-converter-react">
       <Navigation />
       <Switch>
         <Route path={toConverter()}>
@@ -24,7 +24,7 @@ function App() {
         <Route path={toTopRates()}>
           <TopRates />
         </Route>
-        <Route>
+        <Route path="/">
           <Redirect to={toConverter()} />
         </Route>
       </Switch>
