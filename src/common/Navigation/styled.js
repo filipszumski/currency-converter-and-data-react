@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+const activeClassName = "active";
+
 export const Nav = styled.nav`
 flex: 1 0 100%;
 background-color: ${({ theme }) => theme.colors.buttonBackground};
@@ -19,9 +21,9 @@ margin: 20px 10px 20px 10px;
 `;
 
 export const StyledNavLink = styled(NavLink).attrs(() => ({
-    activeClassName: "active",
+    activeClassName,
 }))`
-&.active {
+&.${activeClassName} {
     font-weight: bold;
 }
 color: ${({ theme }) => theme.colors.background};
