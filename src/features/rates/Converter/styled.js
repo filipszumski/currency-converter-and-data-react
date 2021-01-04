@@ -50,13 +50,6 @@ export const Label = styled.label`
         }
     `;
 
-export const Input = styled.input`
-    flex: 0 1 100%;
-    border-radius: 10px;
-    border: 1px solid teal;
-    padding: 8px;
-`;
-
 export const Button = styled.button`
     flex: 1;
     background-color: ${({ theme }) => theme.colors.buttonBackground};
