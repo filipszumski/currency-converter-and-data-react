@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Input, StyledForm, StyledSpan } from "./styled";
-import { selectBase, setBaseRate, selectLatestDayRates } from "../ratesSlice";
+import { selectBase, setBaseRate, selectRatesNames } from "../ratesSlice";
 
 export const BaseInput = () => {
     const dispatch = useDispatch();
     const base = useSelector(selectBase);
-    const rates = useSelector(selectLatestDayRates);
+    const rates = useSelector(selectRatesNames);
 
     const onInputChange = (event) => {
         dispatch(setBaseRate(event.target.value))

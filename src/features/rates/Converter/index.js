@@ -5,11 +5,11 @@ import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
 import { StyledForm, Paragraph, Label, Button, Span } from "./styled";
 import { Input} from "../styled";
-import { getRates, selectState, selectDate, selectLatestDayRates, selectBase } from "../ratesSlice";
+import { getRates, selectState, selectDate, selectRatesNames, selectBase } from "../ratesSlice";
 
 const Converter = () => {
   const dispatch = useDispatch();
-  const rates = useSelector(selectLatestDayRates);
+  const rates = useSelector(selectRatesNames);
   const state = useSelector(selectState);
   const date = useSelector(selectDate);
   const base = useSelector(selectBase);

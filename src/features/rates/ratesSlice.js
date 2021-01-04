@@ -37,7 +37,26 @@ export const selectLatestDayRates = state => {
     const rates = selectRates(state);
 
     if (rates !== undefined && rates.length > 0) {
-        return Object.entries(rates[rates.length - 1][1]);
+        const ratesObject = Object.entries(rates[rates.length - 1][1]);
+        const ratesObjectWithoutBase = ratesObject.filter(rate => rate[0] !== state.rates.base)
+
+        const ratesObjectWithoutBaseSorted = ratesObjectWithoutBase.sort((a, b) => a[0].localeCompare(b[0]));
+        return ratesObjectWithoutBaseSorted;
+    } else {
+        return [];
+    }
+};
+export const selectRatesNames = state => {
+    const rates = selectRates(state);
+
+    if (rates !== undefined && rates.length > 0) {
+        const ratesObject = Object.entries(rates[rates.length - 1][1]);
+        const isBaseRateInObject = ratesObject.some((rate) => rate[0] === "EUR")
+        if (!isBaseRateInObject) {
+            ratesObject.push(["EUR", 1]);
+        }
+        const ratesObjectSorted = ratesObject.sort((a, b) => a[0].localeCompare(b[0]));
+        return ratesObjectSorted;
     } else {
         return [];
     }
@@ -46,7 +65,11 @@ export const selectPreviousToLatestDayRates = state => {
     const rates = selectRates(state);
 
     if (rates !== undefined && rates.length > 0) {
-        return Object.entries(rates[rates.length - 2][1]);
+        const ratesObject = Object.entries(rates[rates.length - 2][1]);
+        const ratesObjectWithoutBase = ratesObject.filter(rate => rate[0] !== state.rates.base)
+
+        const ratesObjectWithoutBaseSorted = ratesObjectWithoutBase.sort((a, b) => a[0].localeCompare(b[0]));
+        return ratesObjectWithoutBaseSorted;
     } else {
         return [];
     }
