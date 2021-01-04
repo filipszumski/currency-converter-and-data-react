@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
-import { BaseInput } from "../BaseInput";
 import { Symbol, Table, TableCell, TableHeader, TableRow, TableContainer } from "./styled";
 import { getRates, selectBase, selectLatestDayRates, selectPreviousToLatestDayRates } from "../ratesSlice";
 
@@ -26,7 +25,7 @@ const LatestRates = () => {
             <TableRow>
               <TableHeader scope="col">Currency</TableHeader>
               <TableHeader scope="col">Spot</TableHeader>
-              <TableHeader scope="col">Increace/Decrease</TableHeader>
+              <TableHeader scope="col">Increace&nbsp;/ Decrease</TableHeader>
               <TableHeader scope="col">Chart</TableHeader>
             </TableRow>
             {(rates !== undefined && rates.length > 0) && rates.map((rate, index) => (
