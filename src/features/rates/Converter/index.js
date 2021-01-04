@@ -3,20 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { Result } from "./Result";
 import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
-import { StyledForm, Paragraph, Label, Input, Button, Span } from "./styled";
+import { BaseInput } from "../BaseInput";
+import { StyledForm, Paragraph, Label, Button, Span } from "./styled";
+import { Input} from "../styled";
 import { getRates, selectState, selectDate, selectLatestDayRates, selectBase } from "../ratesSlice";
 
 const Converter = () => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getRates());
-  }, [dispatch]);
-
   const rates = useSelector(selectLatestDayRates);
   const state = useSelector(selectState);
   const date = useSelector(selectDate);
   const base = useSelector(selectBase);
+
+  useEffect(() => {
+    dispatch(getRates());
+  }, [dispatch, base]);
 
   const inputRef = useRef(null);
 
@@ -26,8 +27,8 @@ const Converter = () => {
   const [result, setResult] = useState();
 
   const calculateResult = () => {
-    const possessedCurrencyRate = rates[possessedCurrency];
-    const wantedCurrencyRate = rates[wantedCurrency];
+    const possessedCurrencyRate = rates.find(rate => rate[0] === possessedCurrency)[1];
+    const wantedCurrencyRate = rates.find(rate => rate[0] === wantedCurrency)[1];
 
     setResult({
       amountPossessed: +amount,
@@ -76,12 +77,12 @@ const Converter = () => {
                       value={possessedCurrency}
                       onChange={event => setPossessedCurrency(event.target.value)}
                     >
-                      {Object.keys(rates).sort((a, b) => a.localeCompare(b)).map(currency => (
+                      {rates.sort((a, b) => a[0].localeCompare(b[0])).map(currency => (
                         <option
-                          key={currency}
-                          value={currency}
+                          key={currency[0]}
+                          value={currency[0]}
                         >
-                          {currency}
+                          {currency[0]}
                         </option>
                       ))}
                     </Input>
@@ -112,12 +113,12 @@ const Converter = () => {
                       value={wantedCurrency}
                       onChange={event => setWantedCurrency(event.target.value)}
                     >
-                      {Object.keys(rates).sort((a, b) => a.localeCompare(b)).map(currency => (
+                      {rates.sort((a, b) => a[0].localeCompare(b[0])).map(currency => (
                         <option
-                          key={currency}
-                          value={currency}
+                          key={currency[0]}
+                          value={currency[0]}
                         >
-                          {currency}
+                          {currency[0]}
                         </option>
                       ))}
                     </Input>
