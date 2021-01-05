@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, List, Item, StyledNavLink } from "./styled";
-import { toConverter, toLatestRates, toChart, toTopRates } from "../../routes";
+import { toConverter, toLatestRates, toChart, toTrends } from "../../routes";
 
 export const Navigation = () => (
     <Nav>
@@ -15,7 +15,7 @@ export const Navigation = () => (
                 <StyledNavLink to={toChart()}>Ostatnie 30 dni</StyledNavLink>
             </Item>
             <Item>
-                <StyledNavLink to={toTopRates()}>TOP 5</StyledNavLink>
+                <StyledNavLink to={toTrends()}>Trends</StyledNavLink>
             </Item>
         </List>
     </Nav>
