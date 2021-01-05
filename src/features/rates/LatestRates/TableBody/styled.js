@@ -12,11 +12,11 @@ export const Symbol = styled.span`
 
 `;
 
-export const TableContainer = styled.div`
+export const Wrapper = styled.div`
     overflow-x: auto;
 `;
 
-export const Table = styled.table`
+export const StyledTable = styled.table`
     border-collapse: collapse;
     width: 100%;
 `;
