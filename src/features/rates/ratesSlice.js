@@ -74,6 +74,27 @@ export const selectPreviousToLatestDayRates = state => {
         return [];
     }
 };
+export const selectRatesForRank = (state) => {
+    const latestDayRates = selectLatestDayRates(state);
+    const previousDayRates = selectPreviousToLatestDayRates(state);
+
+    const ratesArrayForRank = latestDayRates.map((rate, index) => ([
+        rate[0],
+        rate[1],
+        previousDayRates[index][1],
+        (rate[1] / previousDayRates[index][1] - 1) * 100,
+    ]));
+
+    const ratesArrayForRankSorted = ratesArrayForRank.sort((a, b) => a[3] - b[3])
+
+    const ratesArrayForRankSortedDecrease = ratesArrayForRankSorted.slice(0, 5).filter(rate => rate[3] < 0);
+    const ratesArrayForRankSortedIncrease = ratesArrayForRankSorted.slice(-5).reverse().filter(rate => rate[3] > 0);
+
+    return {
+        ratesIncrease: ratesArrayForRankSortedIncrease,
+        ratesDecrease: ratesArrayForRankSortedDecrease,
+    }
+}
 export const selectState = state => selectRatesState(state).state;
 export const selectDate = state => selectRatesState(state).date;
 export const selectBase = state => selectRatesState(state).base;
