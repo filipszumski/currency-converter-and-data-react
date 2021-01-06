@@ -7,12 +7,6 @@ import { TopRates } from "./features/rates/TopRates";
 import { Chart } from "./features/rates/Chart";
 import { toConverter, toLatestRates, toChart, toTrends, toLatestRatesChart } from "./routes";
 
-// WYPIERDALA EUR Z INPUTA
-// ODPOWIEDNI PODZIAŁ NA KOMPONENTY
-// UPCHNĄC BASEINPUT JAK NALEZY
-// ZRBOIC SORTOWANIE NAZW W BASE INPUT
-// ZROBIĆ CHART JAKO JEDEN KOMPONENT NA DWA TYPY DANYCH
-
 function App() {
   return (
     <BrowserRouter basename="/currency-converter-react">
