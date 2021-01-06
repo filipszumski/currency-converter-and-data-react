@@ -9,7 +9,9 @@ const ratesSlice = createSlice({
         base: "PLN"
     },
     reducers: {
-        getRates: () => { },
+        getRates: (state) => {
+            state.state = "loading"
+        },
         getRatesSuccess: (state, { payload: rates }) => {
             state.rates = Object.entries(rates.rates).sort((a, b) => a[0].localeCompare(b[0]));
             state.date = state.rates[state.rates.length - 1][0];
@@ -94,7 +96,16 @@ export const selectRatesForRank = (state) => {
         ratesIncrease: ratesArrayForRankSortedIncrease,
         ratesDecrease: ratesArrayForRankSortedDecrease,
     }
-}
+};
+export const selectRatesForChart = (state, id = "EUR") => {
+    const rates = selectRates(state);
+
+    const ratesById = rates.map((rate) => ([
+        rate[0], rate[1][id],
+    ]));
+
+    return ratesById;
+};
 export const selectState = state => selectRatesState(state).state;
 export const selectDate = state => selectRatesState(state).date;
 export const selectBase = state => selectRatesState(state).base;

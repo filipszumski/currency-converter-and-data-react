@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Symbol = styled.span`
     font-size: 25px;
@@ -41,4 +42,8 @@ export const TableRow = styled.tr`
 &:hover {
     background-color: hsl(180deg 100% 25% / 50%);
 }
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
 `;

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Symbol, TableCell, TableHeader, TableRow } from "./styled";
+import { Symbol, TableCell, TableHeader, TableRow, StyledLink } from "./styled";
+import { toLatestRatesChart } from "../../../../routes";
 import { getRates, selectBase, selectLatestDayRates, selectPreviousToLatestDayRates } from "../../ratesSlice";
 
 export const TableBody = () => {
@@ -30,7 +31,7 @@ export const TableBody = () => {
                             <Symbol increase>	&#129033;</Symbol> :
                             <Symbol decrease>	&#129035;</Symbol>}
                     </TableCell>
-                    <TableCell><span role="img">📉</span></TableCell>
+                    <TableCell><span role="img" aria-label="chart image"><StyledLink to={toLatestRatesChart(rate[0])}>📉</StyledLink></span></TableCell>
                 </TableRow>
             ))}
         </>

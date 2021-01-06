@@ -4,7 +4,7 @@ import { Result } from "./Result";
 import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
 import { StyledForm, Paragraph, Label, Button, Span } from "./styled";
-import { Input} from "../styled";
+import { Input } from "../styled";
 import { getRates, selectState, selectDate, selectRatesNames, selectBase } from "../ratesSlice";
 
 const Converter = () => {
