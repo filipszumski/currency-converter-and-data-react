@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+    overflow: auto;
     flex: 0 1 800px;
     font-size: 16px;
     background-color: ${({ theme }) => theme.colors.background};
