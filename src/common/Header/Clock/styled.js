@@ -6,9 +6,10 @@ export const Wrapper = styled.div`
     font-size: 14px;
     margin: 0;
 
-    @media(max-width:542px) {
+    @media(max-width:560px) {
+        flex: 1 0 100%;
         order: -1;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         justify-self: flex-end;
 }
 `;
