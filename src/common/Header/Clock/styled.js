@@ -5,4 +5,10 @@ export const Wrapper = styled.div`
     text-align: end;
     font-size: 14px;
     margin: 0;
+
+    @media(max-width:542px) {
+        order: -1;
+        margin-bottom: 10px;
+        justify-self: flex-end;
+}
 `;
