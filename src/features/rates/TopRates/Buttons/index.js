@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../styled";
+import { Wrapper } from "./style";
 
 export const Buttons = ({ setTrend }) => {
 
@@ -14,9 +15,9 @@ export const Buttons = ({ setTrend }) => {
     };
 
     return (
-        <div>
-            <Button onClick={onButtonChange}>increase</Button>
-            <Button onClick={onButtonChange}>decrease</Button>
-        </div>
+        <Wrapper>
+            <Button trends onClick={onButtonChange}>increase</Button>
+            <Button trends onClick={onButtonChange}>decrease</Button>
+        </Wrapper>
     )
 };

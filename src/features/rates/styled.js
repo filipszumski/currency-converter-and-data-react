@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Input = styled.input`
     flex: 0 1 100%;
@@ -22,4 +22,8 @@ export const Button = styled.button`
     &:active {
         filter: brightness(120%);
     }
+
+    ${({ trends }) => trends && css`
+        margin: 0px 20px 20px 0px
+    `}
 `;
