@@ -14,7 +14,7 @@ const Header = ({ title }) => {
         <Container>
             {location.pathname === toConverter() ?
                 <span></span> :
-                location.pathname === toLatestRates ?
+                location.pathname === toLatestRates() ?
                     <BaseInput /> :
                     location.pathname === toLatestRatesChart(params.id) ?
                         <BaseInput /> :
