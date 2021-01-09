@@ -10,7 +10,7 @@ const TopRates = () => {
 
   return (
     <Container>
-      <Header title="Trends" />
+      <Header title="Trendy" />
       <Buttons setTrend={setTrend} />
       <Table
         body={<TableBody trend={trend} />}

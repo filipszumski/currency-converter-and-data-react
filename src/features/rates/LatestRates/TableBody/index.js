@@ -17,10 +17,10 @@ export const TableBody = () => {
     return (
         <>
             <TableRow>
-                <TableHeader scope="col">Currency</TableHeader>
-                <TableHeader scope="col">Spot</TableHeader>
-                <TableHeader scope="col">Increace&nbsp;/ Decrease</TableHeader>
-                <TableHeader scope="col">Chart</TableHeader>
+                <TableHeader scope="col">Waluta</TableHeader>
+                <TableHeader scope="col">Kurs</TableHeader>
+                <TableHeader scope="col">Wzrost&nbsp;/ Spadek</TableHeader>
+                <TableHeader scope="col">Wykres</TableHeader>
             </TableRow>
             {(rates !== undefined && rates.length > 0) && rates.map((rate, index) => (
                 <TableRow key={rate[0]}>

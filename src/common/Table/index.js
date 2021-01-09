@@ -12,4 +12,4 @@ export const Table = ({ body }) => {
             </StyledTable>
         </Wrapper>
     )
-}
+};

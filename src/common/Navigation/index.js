@@ -15,7 +15,7 @@ export const Navigation = () => (
                 <StyledNavLink to={toChart()}>Ostatnie 30 dni</StyledNavLink>
             </Item>
             <Item>
-                <StyledNavLink to={toTrends()}>Trends</StyledNavLink>
+                <StyledNavLink to={toTrends()}>Trendy</StyledNavLink>
             </Item>
         </List>
     </Nav>

@@ -16,8 +16,8 @@ export const Buttons = ({ setTrend }) => {
 
     return (
         <Wrapper>
-            <Button trends onClick={onButtonChange}>increase</Button>
-            <Button trends onClick={onButtonChange}>decrease</Button>
+            <Button trends onClick={onButtonChange}>Wzrosty</Button>
+            <Button trends onClick={onButtonChange}>Spadki</Button>
         </Wrapper>
     )
 };

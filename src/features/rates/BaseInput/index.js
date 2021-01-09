@@ -15,7 +15,7 @@ export const BaseInput = () => {
     return (
         <StyledForm>
             <label>
-                <StyledSpan>Base:</StyledSpan>
+                <StyledSpan>Baza:</StyledSpan>
                 <Input as="select" value={base} onChange={onInputChange}>
                     {rates.map(rate => (
                         <option key={rate[0]}>

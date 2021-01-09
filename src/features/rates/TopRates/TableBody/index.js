@@ -21,8 +21,8 @@ export const TableBody = ({ trend }) => {
     return (
         <>
             <TableRow>
-                <TableHeader scope="col">Currency</TableHeader>
-                <TableHeader scope="col">Difference</TableHeader>
+                <TableHeader scope="col">Waluta</TableHeader>
+                <TableHeader scope="col">Różnica</TableHeader>
                 <TableHeader scope="col">%</TableHeader>
             </TableRow>
             {trend === 'increase' ?
