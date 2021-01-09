@@ -24,6 +24,6 @@ export const Button = styled.button`
     }
 
     ${({ trends }) => trends && css`
-        margin: 0px 20px 20px 0px
+        margin: 0px 10px 20px 10px
     `}
 `;
