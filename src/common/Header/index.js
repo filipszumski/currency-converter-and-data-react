@@ -4,6 +4,7 @@ import { Clock } from "./Clock";
 import { BaseInput } from "../../features/rates/BaseInput";
 import { StyledHeader } from "./styled";
 import { useLocation, useParams } from "react-router-dom";
+import { toConverter, toLatestRates, toLatestRatesChart, toChart, toTrends } from "../../routes";
 
 const Header = ({ title }) => {
     const location = useLocation();
@@ -11,17 +12,17 @@ const Header = ({ title }) => {
 
     return (
         <Container>
-            {location.pathname === "/convarter" ?
-                <></> :
-                location.pathname === "/latest-rates" ?
+            {location.pathname === toConverter() ?
+                <span></span> :
+                location.pathname === toLatestRates ?
                     <BaseInput /> :
-                    location.pathname === `/latest-rates/${params.id}` ?
-                        <></> :
-                        location.pathname === "/chart" ?
+                    location.pathname === toLatestRatesChart(params.id) ?
+                        <BaseInput /> :
+                        location.pathname === toChart() ?
                             <BaseInput /> :
-                            location.pathname === "/trends" ?
+                            location.pathname === toTrends() ?
                                 <BaseInput /> :
-                                <></>
+                                <span></span>
             }
             <Clock />
             <StyledHeader>
