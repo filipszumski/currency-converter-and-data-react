@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Symbol, TableCell, TableHeader, TableRow, StyledLink } from "./styled";
+import { Symbol, TableCell, TableHeader, TableRow, StyledLink } from "../../styled";
 import { toLatestRatesChart } from "../../../../routes";
 import { getRates, selectBase, selectLatestDayRates, selectPreviousToLatestDayRates } from "../../ratesSlice";
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TableCell, TableHeader, TableRow } from "./styled";
+import { TableCell, TableHeader, TableRow } from "../../styled";
 import {
     getRates,
     selectBase,

@@ -7,10 +7,6 @@ export const Input = styled.input`
     font-size: 14px;
 `;
 
-export const StyledForm = styled.form`
-
-`;
-
 export const StyledSpan = styled.span`
         font-size: 14px;
         margin-right: 5px;

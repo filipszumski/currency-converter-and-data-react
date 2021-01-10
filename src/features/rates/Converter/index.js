@@ -18,7 +18,6 @@ const Converter = () => {
   const dispatch = useDispatch();
   const rates = useSelector(selectRatesNames);
   const state = useSelector(selectState);
-  const date = useSelector(selectDate);
   const base = useSelector(selectBase);
 
   useEffect(() => {
