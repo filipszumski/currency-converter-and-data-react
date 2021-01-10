@@ -6,6 +6,7 @@ import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
 import { selectRatesForChart, getRates, selectState, selectBase } from "../ratesSlice";
 import { Wrapper } from "./styled";
+import { Footer } from "../../../common/Footer";
 
 const Chart = () => {
   const params = useParams();
@@ -46,6 +47,7 @@ const Chart = () => {
           />
         )}
       </Wrapper>
+      <Footer />
     </Container>
   );
 };

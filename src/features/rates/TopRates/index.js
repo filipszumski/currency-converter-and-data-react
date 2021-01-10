@@ -4,6 +4,7 @@ import { Header } from "../../../common/Header";
 import { Table } from "../../../common/Table";
 import { Buttons } from "./Buttons";
 import { TableBody } from "./TableBody";
+import { Footer } from "../../../common/Footer";
 
 const TopRates = () => {
   const [trend, setTrend] = useState("increase");
@@ -15,6 +16,7 @@ const TopRates = () => {
       <Table
         body={<TableBody trend={trend} />}
       />
+      <Footer />
     </Container>
   );
 };

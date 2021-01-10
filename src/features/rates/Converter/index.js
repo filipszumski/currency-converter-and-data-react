@@ -5,7 +5,14 @@ import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
 import { StyledForm, Paragraph, Label, Button, Span } from "./styled";
 import { Input } from "../styled";
-import { getRates, selectState, selectDate, selectRatesNames, selectBase } from "../ratesSlice";
+import { Footer } from "../../../common/Footer";
+import {
+  getRates,
+  selectState,
+  selectDate,
+  selectRatesNames,
+  selectBase
+} from "../ratesSlice";
 
 const Converter = () => {
   const dispatch = useDispatch();
@@ -127,10 +134,7 @@ const Converter = () => {
                 <Paragraph>
                   <Button>Przelicz</Button>
                 </Paragraph>
-                <Paragraph info>
-                  Kursy walut pobierane są z Europejskiego Banku Centralnego.<br />
-              Aktualne na dzień: {date}
-                </Paragraph>
+                <Footer />
                 <Result result={result} />
               </>
             )}
