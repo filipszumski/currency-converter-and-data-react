@@ -38,9 +38,11 @@ const Chart = () => {
             ],
           }}
             options={{
-              responsive: true,
+              responsive: false,
               maintainAspectRatio: false,
             }}
+            height={350}
+            width={740}
           />
         )}
       </Wrapper>
