@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Container } from "../../../common/Container";
 import { Header } from "../../../common/Header";
 import { selectRatesForChart, getRates, selectState, selectBase } from "../ratesSlice";
+import { Wrapper } from "./styled";
 
 const Chart = () => {
   const params = useParams();
@@ -23,7 +24,7 @@ const Chart = () => {
   return (
     <Container>
       <Header title="Ostatnie 30 dni" />
-      <div>
+      <Wrapper >
         {rates !== undefined && rates.length > 0 && loadingState === "success" && (
           <Bar data={{
             labels: chartDates,
@@ -35,9 +36,14 @@ const Chart = () => {
                 borderWidth: 4,
               },
             ],
-          }} />
+          }}
+            options={{
+              responsive: true,
+              maintainAspectRatio: false,
+            }}
+          />
         )}
-      </div>
+      </Wrapper>
     </Container>
   );
 };
