@@ -9,7 +9,6 @@ import { Footer } from "../../../common/Footer";
 import {
   getRates,
   selectState,
-  selectDate,
   selectRatesNames,
   selectBase
 } from "../ratesSlice";
