@@ -8,6 +8,6 @@ export const Wrapper = styled.div`
     padding: 30px;
     border-radius: 50px;
     box-shadow: 0px 0px 8px 1px;
-    opacity: 0.90;
+    opacity: 0.85;
     margin: 20px;
 `;
