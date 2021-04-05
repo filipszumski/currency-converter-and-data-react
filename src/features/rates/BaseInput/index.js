@@ -4,6 +4,7 @@ import { Input, StyledSpan } from "./styled";
 import { selectBase, setBaseRate, selectRatesNames } from "../ratesSlice";
 import { useLocation, useParams } from "react-router-dom";
 import { toLatestRatesChart } from "../../../routes";
+import currencySymbols from "../../../data/currencySymbols.json";
 
 export const BaseInput = () => {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export const BaseInput = () => {
                 <Input as="select" value={base} onChange={onInputChange} disabled={location.pathname === toLatestRatesChart(params.id)}>
                     {rates.map(rate => (
                         <option key={rate[0]}>
-                            {rate[0]}
+                            {rate[0]} - {currencySymbols.symbols[rate[0]].description}
                         </option>
                     ))}
                 </Input>

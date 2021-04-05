@@ -12,6 +12,7 @@ import {
   selectRatesNames,
   selectBase
 } from "../ratesSlice";
+import currencySymbols from "../../../data/currencySymbols.json";
 
 const Converter = () => {
   const dispatch = useDispatch();
@@ -81,12 +82,12 @@ const Converter = () => {
                       value={possessedCurrency}
                       onChange={event => setPossessedCurrency(event.target.value)}
                     >
-                      {rates.sort((a, b) => a[0].localeCompare(b[0])).map(currency => (
+                      {rates.sort((a, b) => a[0].localeCompare(b[0])).map((currency) => (
                         <option
                           key={currency[0]}
                           value={currency[0]}
                         >
-                          {currency[0]}
+                          {currency[0]} - {currencySymbols.symbols[currency[0]].description}
                         </option>
                       ))}
                     </Input>
@@ -122,7 +123,7 @@ const Converter = () => {
                           key={currency[0]}
                           value={currency[0]}
                         >
-                          {currency[0]}
+                          {currency[0]} - {currencySymbols.symbols[currency[0]].description}
                         </option>
                       ))}
                     </Input>
