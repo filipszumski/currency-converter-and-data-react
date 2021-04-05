@@ -14,14 +14,15 @@ export const BaseInput = () => {
     const rates = useSelector(selectRatesNames);
 
     const onInputChange = (event) => {
-        dispatch(setBaseRate(event.target.value))
+        const currencySymbol = event.target.value.split(" - ")[0];
+        dispatch(setBaseRate(currencySymbol))
     }
 
     return (
         <form>
             <label>
                 <StyledSpan>Baza:</StyledSpan>
-                <Input as="select" value={base} onChange={onInputChange} disabled={location.pathname === toLatestRatesChart(params.id)}>
+                <Input as="select" value={`${base} - ${currencySymbols.symbols[base].description}`} onChange={onInputChange} disabled={location.pathname === toLatestRatesChart(params.id)}>
                     {rates.map(rate => (
                         <option key={rate[0]}>
                             {rate[0]} - {currencySymbols.symbols[rate[0]].description}
