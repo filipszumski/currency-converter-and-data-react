@@ -2,10 +2,15 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Input = styled.input`
-    flex: 0 1 100%;
+    flex: 1 0 auto;
     border-radius: 10px;
     border: 1px solid teal;
     padding: 5px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        flex: 1 0 51%;
+        width: 0;
+    }
 `;
 
 export const Button = styled.button`

@@ -64,6 +64,6 @@ export const Span = styled.span`
     flex: 0 0 300px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        flex: 0 1 auto;
+        flex: 1 0 51%;
     }
 `;
