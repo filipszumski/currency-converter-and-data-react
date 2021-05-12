@@ -33,19 +33,19 @@ This is currency orientated application with currency converter and data. Applic
 
 ### Currency Converter Page
 
-- converting currency based on actual rate (updated every day).
+- converting currency based on actual rate (updated every day)
 
 <img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/currencyConverter.png?raw=true" alt="Currency Conveter Image" width="700" />
 
 ### Latest Rates Page
 
-- showing currency data for chosen base currency with convertion name, rate, increase or descrease tendency compared with previous day data,<br /> and link to chart with historical data for chosen currency.
+- showing currency data for chosen base currency with convertion name, rate, increase or descrease tendency compared with previous day data,<br /> and link to chart with historical data for chosen currency
 
 <img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/latestRates.png?raw=true" alt="Currency Conveter Image" width="700" />
 
 ### Last 30 days Page
 
-- showing chart with historical rates data for chosen base currency against Euro for last 30 days.
+- showing chart with historical rates data for chosen base currency against Euro for last 30 days
 
 <img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/last30Days.png?raw=true" alt="Currency Conveter Image" width="700" />
 
