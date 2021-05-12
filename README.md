@@ -6,33 +6,62 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-Simple currency converter. It allows you to make caluculations between few currencies. Exchange rate are currently static, based on rates of the day from Polish National Bank website. Supported currencies:
-
-- PLN - Polish Zloty
-- EUR - Euro
-- USD - US Dollar
-- GBP - British Pound
-- CHF - Swiss Franc
-
-### Technologies used
+This is currency orientated application with currency converter and data. Application allows you to convert currencies base on actual rates, view latest and historical data from last 30 days.
+## Technologies used
 
 - HTML
-- CSS 
-- JavaScript
-- BEM
+- CSS
+- JavaScript ES6+
 - React
+- Redux with react-redux
+- React Saga
+- React Router
+- Styled Components
 - create-react-app
+- npm
 - Webpack
 - Babel
+- axios
+- Chart.js
+- Moment.js
 
-### How to use
+## External Sources
 
-![instruction GIF](https://github.com/filipszumski/currency-converter/blob/master/images/instruction.gif?raw=true)
+- https://exchangerate.host/#/ Foreign exchange rates API
 
-1. Choose a currency you wish to convert from.
-2. Write an amount that you want to convert.
-3. Choose a currency you wish to convert to.
-4. Click on the calcute button to display result and rate.
+## Features
+
+### Currency Converter Page
+
+- converting currency based on actual rate (updated every day).
+
+<img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/currencyConverter.png?raw=true" alt="Currency Conveter Image" width="700" />
+
+### Latest Rates Page
+
+- showing currency data for chosen base currency with convertion name, rate, increase or descrease tendency compared with previos day data,<br /> and link to chart with historical data for chosen currency.
+
+<img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/latestRates.png?raw=true" alt="Currency Conveter Image" width="700" />
+
+### Last 30 days Page
+
+- showing chart with historical rates data for chosen base currency against Euro for last 30 days.
+
+<img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/last30Days.png?raw=true" alt="Currency Conveter Image" width="700" />
+
+### Trends Page
+
+- showing table with 5 biggest trends (increase or decrease) for chosen base currency compared with previous day data
+
+<img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/trends.png?raw=true" alt="Currency Conveter Image" width="700" />
+
+## My other projects
+
+- [Tasks List](https://filipszumski.github.io/tasks-list/)
+- [Currency Converter](https://filipszumski.github.io/currency-converter/)
+- [Tasks List React](https://filipszumski.github.io/tasks-list-react/)
+- [Crowdfunding Product Page](https://filipszumski.github.io/crowdfunding-product-page/)
+- [REST Countries API With Theme Switcher](https://filipszumski.github.io/rest-countries-api-with-color-theme-switcher/)
 
 ## Available Scripts
 
