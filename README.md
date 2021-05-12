@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-This is currency orientated application with currency converter and data. Application allows you to convert currencies base on actual rates, view latest and historical data from last 30 days.
+This is currency orientated application with currency converter and data. Application allows you to convert currencies based on actual rates, view latest and historical data from last 30 days.
 ## Technologies used
 
 - HTML
