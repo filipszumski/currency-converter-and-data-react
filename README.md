@@ -1,6 +1,6 @@
-# Currency converter
+# Currency converter and data
 
-Link: [https://filipszumski.github.io/currency-converter-react/](https://filipszumski.github.io/currency-converter-react/)
+Link: [https://filipszumski.github.io/currency-converter-react/](https://filipszumski.github.io/currency-converter-and-data-react/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,7 +39,7 @@ This is currency orientated application with currency converter and data. Applic
 
 ### Latest Rates Page
 
-- showing currency data for chosen base currency with convertion name, rate, increase or descrease tendency compared with previos day data,<br /> and link to chart with historical data for chosen currency.
+- showing currency data for chosen base currency with convertion name, rate, increase or descrease tendency compared with previous day data,<br /> and link to chart with historical data for chosen currency.
 
 <img src="https://github.com/filipszumski/currency-converter-and-data-react/blob/master/src/images/latestRates.png?raw=true" alt="Currency Conveter Image" width="700" />
 
