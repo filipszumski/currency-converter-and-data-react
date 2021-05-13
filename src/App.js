@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, HashRouter } from "react-router-dom";
 import { Navigation } from "./common/Navigation";
 import { Converter } from "./features/rates/Converter";
 import { LatestRates } from "./features/rates/LatestRates";
@@ -9,7 +9,7 @@ import { toConverter, toLatestRates, toChart, toTrends, toLatestRatesChart } fro
 
 function App() {
   return (
-    <BrowserRouter basename="/currency-converter-react">
+    <HashRouter>
       <Navigation />
       <Switch>
         <Route path={toLatestRatesChart()}>
@@ -31,7 +31,7 @@ function App() {
           <Redirect to={toConverter()} />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
