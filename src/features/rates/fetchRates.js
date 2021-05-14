@@ -1,8 +1,8 @@
 import axios from "axios";
 import moment from "moment";
 
-// const date = moment().format('YYYY-MM-DD');
-const date = moment().subtract(1, 'days').format('YYYY-MM-DD');
+const date = moment().format('YYYY-MM-DD');
+// const date = moment().subtract(1, 'days').format('YYYY-MM-DD');
 const startAtDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
 
 export const fetchRates = async (base) => {
